@@ -1,0 +1,147 @@
+@import "../../../../../scss/colors";
+.all-products {
+  background-color: $black-color;
+  color: $white-color;
+  &:hover {
+    background-color: $white-color;
+    color: $black-color;
+  }
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+.login-button {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+.mat-icon-button {
+  margin-right: 20px;
+}
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+ul {
+  list-style: none;
+}
+
+.user-menu-wrap {
+  position: relative;
+}
+
+.menu-container {
+  visibility: hidden;
+  opacity: 0;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.user-menu {
+  position: absolute;
+  z-index: 20;
+  right: -22px;
+  background-color: $white-color;
+  width: 256px;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 20px;
+
+  .profile-highlight {
+    display: flex;
+    border-bottom: 1px solid $border-gray;
+    padding: 12px 16px;
+    margin-bottom: 6px;
+    color: $black-color;
+    img {
+      width: 48px;
+      height: 48px;
+      border-radius: 25px;
+      object-fit: cover;
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      margin: auto 12px;
+
+      .profile-name {
+        font-weight: 600;
+        font-size: 16px;
+      }
+
+      .profile-footer {
+        font-weight: 300;
+        font-size: 14px;
+        margin-top: 4px;
+      }
+    }
+  }
+
+  .footer {
+    .user-menu-link {
+      font-size: 13px;
+    }
+
+    .logout {
+      color: $red-color;
+    }
+  }
+
+  .user-menu-link {
+    display: flex;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 12px 16px;
+    div {
+      margin: auto 10px;
+    }
+    &:hover {
+      background-color: $hover-gray;
+    }
+  }
+
+  &:before {
+    position: absolute;
+    top: -16px;
+    left: 204px;
+    display: inline-block;
+    content: "";
+    border: 8px solid transparent;
+    border-bottom-color: $border-gray;
+  }
+
+  &:after {
+    position: absolute;
+    top: -14px;
+    left: 205px;
+    display: inline-block;
+    content: "";
+    border: 7px solid transparent;
+    border-bottom-color: $white-color;
+  }
+}
+a {
+  cursor: pointer;
+}
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: auto;
+}
+.mat-drawer-content {
+  height: 0px;
+}
+.activeLink {
+  background-color: $background-color-gray;
+}

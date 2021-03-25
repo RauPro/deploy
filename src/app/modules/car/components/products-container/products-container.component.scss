@@ -1,0 +1,25 @@
+.mat-table,
+.no-data {
+  position: relative;
+  width: 70%;
+  margin: 90px auto auto;
+  h1 {
+    text-align: center;
+  }
+}
+.container-table {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  .price {
+    margin: 0px 20px 0px 0px;
+    z-index: 1;
+  }
+}
+.action-container {
+  display: flex;
+  justify-content: space-around;
+}
+.mat-card-image {
+  margin: 0 !important;
+}

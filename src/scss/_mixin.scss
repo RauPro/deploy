@@ -1,0 +1,5 @@
+@mixin responsiveWith($screen, $with) {
+  @media (max-width: $screen) {
+    width: $with;
+  }
+}

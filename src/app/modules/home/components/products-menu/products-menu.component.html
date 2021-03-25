@@ -1,0 +1,46 @@
+<section class="container">
+  <div class="grid-container">
+    <mat-card *ngFor="let product of products">
+      <img
+        mat-card-image
+        style="height: 300px"
+        [src]="product.image?.url || defaultURL"
+      />
+      <mat-card-title>{{ product.name }}</mat-card-title>
+      <mat-card-content>
+        <div>{{ product.description }}</div>
+        <div>{{ product.category.name }}</div>
+      </mat-card-content>
+      <mat-card-title>${{ product.master.price | number }}</mat-card-title>
+      <mat-card-actions>
+        <div>
+          <button mat-icon-button>
+            {{ product.likes_up_count }}
+            <mat-icon>thumb_up_alt</mat-icon>
+          </button>
+          <button mat-icon-button>
+            {{ product.likes_down_count }}
+            <mat-icon>thumb_down_alt</mat-icon>
+          </button>
+        </div>
+        <button mat-raised-button color="warn" (click)="addToCart(product)">
+          Add to car
+          <button mat-icon-button>
+            <mat-icon>add_shopping_cart </mat-icon>
+          </button>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</section>
+<nav class="navigation">
+  <ul class="pagination pg-blue">
+    <li
+      class="page-item"
+      *ngFor="let a of pages; let index = index"
+      (click)="newPage(index + 1)"
+    >
+      <a class="page-link">{{ index + 1 }}</a>
+    </li>
+  </ul>
+</nav>

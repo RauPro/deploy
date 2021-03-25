@@ -1,0 +1,22 @@
+@import 'fonts';
+@import 'colors';
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: $sans-serif;
+  box-sizing: border-box;
+}
+body {
+  line-height: 1;
+  margin: 0;
+  background-color: $background-color-gray;
+}
+ol,
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: $blue-color;
+}

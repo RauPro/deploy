@@ -1,0 +1,77 @@
+<mat-sidenav-container class="example-container">
+  <mat-toolbar color="primary">
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+      (click)="sidenav.toggle()"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      <mat-icon [matBadge]="car | async" matBadgeColor="warn" routerLink="/shop"
+        >shopping_cart</mat-icon
+      >
+    </button>
+    <button
+      mat-raised-button
+      class="login-button"
+      *ngIf="(isLoggedOut$ | async) && !tokenStatus"
+      routerLink="/login"
+    >
+      login
+    </button>
+    <div *ngIf="(isLoggedIn$ | async) || tokenStatus">
+      <div class="user-menu-wrap">
+        <div class="mini-photo-wrapper" (click)="changeToggleStatus()">
+          <img
+            class="mini-photo"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Anonymous_emblem.svg/1200px-Anonymous_emblem.svg.png"
+            width="36"
+            height="36"
+          />
+        </div>
+        <div class="menu-container" [class.active]="toggleProfile">
+          <div class="user-menu">
+            <div class="profile-highlight">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Anonymous_emblem.svg/1200px-Anonymous_emblem.svg.png"
+                alt="profile-img"
+                width="36"
+                height="36"
+              />
+            </div>
+            <div class="footer">
+              <div class="user-menu__item">
+                <a class="user-menu-link logout" (click)="logout()">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav #sidenav>
+    <mat-nav-list role="list">
+      <a routerLink="/" (click)="sidenav.toggle()" mat-list-item
+        >All products</a
+      >
+      <a
+        routerLink="/category/{{ category.slug }}"
+        routerLinkActive="activeLink"
+        (click)="sidenav.toggle()"
+        mat-list-item
+        *ngFor="let category of categories"
+        >{{ category.name }}</a
+      >
+      <router-outlet></router-outlet>
+    </mat-nav-list>
+  </mat-sidenav>
+</mat-sidenav-container>

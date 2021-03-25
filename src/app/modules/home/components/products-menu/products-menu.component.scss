@@ -1,0 +1,42 @@
+@import "src/scss/colors";
+.grid-container {
+  width: 70%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  gap: 2rem;
+}
+.container {
+  padding-top: 100px;
+  z-index: 1;
+  width: 100%;
+  background-color: $gray-color;
+  padding-bottom: 20px;
+}
+.mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+}
+.pagination {
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.25rem;
+}
+.page-item {
+  padding: 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: $gray-color;
+  }
+}
+.page-item > .page-link {
+  font-size: 0.9rem;
+  border: 0;
+  outline: 0;
+}
+.navigation {
+  display: flex;
+  justify-content: center;
+}
