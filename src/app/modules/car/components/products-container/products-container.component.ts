@@ -78,8 +78,7 @@ export class ProductsContainerComponent implements OnInit {
   }
 
   checkout(): void {
-    this.isLoggedIn$.subscribe((data) => {
-      if (data || this.authService.isLogged()) {
+      if (this.authService.isLogged()) {
         this.purchase();
         this.dataCar = [];
         this.store.dispatch(Reset());
@@ -96,11 +95,13 @@ export class ProductsContainerComponent implements OnInit {
           this.router.navigateByUrl('/login');
         }, 3000);
       }
-    });
   }
   purchase(): void {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '250px',
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
     });
   }
 }
