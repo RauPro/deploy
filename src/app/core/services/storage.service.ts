@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { IDataProducts } from '../interfaces/idata-products';
 
-@Injectable()
+
+@Injectable({
+  providedIn: 'root',
+})
 export class StorageService {
   constructor() {}
   saveToken(token: string): void {
